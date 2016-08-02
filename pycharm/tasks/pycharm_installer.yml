@@ -5,6 +5,10 @@
 # in order to update your current installation you have to remove it manually
 # or invoke playbook with "-e update_apps=true" or simply update from within
 # pycharm
+# After update you'll probably have to run application manually from
+# ./bin/pycharm.sh and re - generate desktopr entry / cmd - launcher (Tools
+# -> Create Desktop Entry) and re - import settings from ~/.PycharmXXX 
+# directory
 
 - name: Check if there is any old installation
   stat: path="{{ local_soft_dir }}/pycharm"
@@ -14,7 +18,7 @@
   - name: Download package
     get_url: >
       dest={{ temp_dir }}/pycharm.tar.gz
-      url="https://download.jetbrains.com/python/pycharm-professional-2016.1.2.tar.gz"
+      url="https://download.jetbrains.com/python/pycharm-professional-2016.2.tar.gz"
 
   - name: Ensure Pycharm directory is removed
     file: >
