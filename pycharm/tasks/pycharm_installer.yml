@@ -18,7 +18,7 @@
   - name: Download package
     get_url: >
       dest={{ temp_dir }}/pycharm.tar.gz
-      url="https://download.jetbrains.com/python/pycharm-professional-2016.2.tar.gz"
+      url="https://download.jetbrains.com/python/pycharm-professional-2016.2.3.tar.gz"
 
   - name: Ensure Pycharm directory is removed
     file: >
