@@ -31,7 +31,7 @@
       dest={{ local_soft_dir }}/
       group={{ group }}
       owner={{ user }}
-    when: pycharm_state.stat.exists == false or update_apps | default('') != ''
+  when: pycharm_state.stat.exists == false or update_apps | default('') != ''
 
   # details aboout this operation: https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
   - name: Increase inotify limit
