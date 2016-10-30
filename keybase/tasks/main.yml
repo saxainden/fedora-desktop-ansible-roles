@@ -1,4 +1,4 @@
 ---
 # this playbook includes keybase installer
 - include: keybase_installer.yml
-  tags: ntp
+  tags: keybase
