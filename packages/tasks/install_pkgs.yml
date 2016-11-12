@@ -39,4 +39,5 @@
     - sysstat
     - fuse-exfat
     - exfat-utils
+    - pandocs
   tags: pkgs
