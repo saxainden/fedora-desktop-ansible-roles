@@ -40,4 +40,5 @@
     - fuse-exfat
     - exfat-utils
     - pandocs
+    - python-certbot-apache
   tags: pkgs
