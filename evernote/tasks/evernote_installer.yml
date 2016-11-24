@@ -4,7 +4,7 @@
 
 # dnf module cannot manage COPR repos :(
 - name: Enable COPR repo
-  shell: dnf copr enable nunodias/nixnote2
+  shell: dnf copr enable nunodias/nixnote2 -y
 
 - name: Install pkg
   dnf: >
