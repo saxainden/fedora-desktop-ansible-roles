@@ -41,4 +41,5 @@
     - exfat-utils
     - pandoc
     - python-certbot-apache
+    - rust
   tags: pkgs
