@@ -42,4 +42,5 @@
     - pandoc
     - python-certbot-apache
     - rust
+    - cargo
   tags: pkgs
