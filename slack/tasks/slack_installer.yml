@@ -1,8 +1,7 @@
 ---
-- name: Install Slack client from npm
-  npm: >
-    name=plaidchat
-    global=yes
+- name: Install Slack client
+  dnf: >
+    name=https://downloads.slack-edge.com/linux_releases/slack-2.3.3-0.1.fc21.x86_64.rpm
     state=present
 
 - name: Add entry to Gnome3 applications
