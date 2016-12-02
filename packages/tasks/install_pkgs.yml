@@ -39,6 +39,8 @@
     - sysstat
     - fuse-exfat
     - exfat-utils
-    - pandocs
+    - pandoc
     - python-certbot-apache
+    - rust
+    - cargo
   tags: pkgs

@@ -2,12 +2,11 @@
 # This playbook installs nixnote - evernote client for linux
 # For now i'm using 2.x beta as it rocks regarding performance
 
-- name: Download package
-  get_url: >
-    dest={{ temp_dir }}/nixnote.rpm
-    url="http://downloads.sourceforge.net/project/nevernote/NixNote2%20-%20Beta%208/nixnote2-2.0_beta8-0.x86_64.rpm?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fnevernote%2Ffiles%2FNixNote2%2520-%2520Beta%25208%2F&ts=1475152795&use_mirror=freefr"
+# dnf module cannot manage COPR repos :(
+- name: Enable COPR repo
+  shell: dnf copr enable nunodias/nixnote2 -y
 
 - name: Install pkg
   dnf: >
-    name={{ temp_dir }}/nixnote.rpm
-    state=present
+    name=nixnote2
+    state=latest
