@@ -5,7 +5,9 @@
   dnf: name={{ item }} state=latest
   with_items:
     - wireshark
-    - wireshark-gnome
+    - wireshark-gtk
+    - wireshark-qt
+    - wireshark-cli
 
 - name: Add user to wireshark group
   command: usermod -a -G wireshark {{ user }}
