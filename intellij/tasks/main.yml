@@ -4,3 +4,8 @@
   tags:
   - pycharm
   - installation
+
+- include: intellij_installer.yml
+  tags:
+  - intellij
+  - installation
