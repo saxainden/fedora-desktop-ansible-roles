@@ -1,10 +1,4 @@
 ---
-# this playbook includes pycharm installer
-- include: pycharm_installer.yml
-  tags:
-  - pycharm
-  - installation
-
 - include: intellij_installer.yml
   tags:
   - intellij
