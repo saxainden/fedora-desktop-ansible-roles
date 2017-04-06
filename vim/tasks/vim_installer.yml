@@ -24,6 +24,7 @@
 #    - { repo: "http://github.com/mattn/gist-vim.git ", dest: "sources_non_forked/gist" }
 
 - name: Run Ultimate vimrc installer
+  become: no
   shell: sh {{ home_dir }}/.vim_runtime/install_awesome_vimrc.sh
 
 - name: Fix permissions
