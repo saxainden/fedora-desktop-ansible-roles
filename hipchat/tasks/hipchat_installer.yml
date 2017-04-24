@@ -1,6 +1,6 @@
 ---
 - name: Create Hipchat repo
-  file:
+  copy:
     src=hipchat4.repo
     dest=/etc/yum.repos.d/hipchat4.repo
     owner=root
