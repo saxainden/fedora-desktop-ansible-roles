@@ -1,0 +1,29 @@
+---
+# This playbook installs Hashicorp Packer
+# unfortunately there're no fedora / rhel packages so
+# we download zip and unarchive it
+# in order to update your current installation you have to remove it manually
+# or invoke playbook with "-e update_apps=true"
+
+- name: Check if there is any old installation
+  stat: path="{{ local_soft_dir }}/packer"
+  register: packer_state
+
+- block:
+  - name: Download package
+    get_url: >
+      dest={{ temp_dir }}/packer.zip
+      url="https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip"
+
+  - name: Ensure Packer directory is removed
+    file: >
+      path={{ local_soft_dir }}/packer
+      state=absent
+
+  - name: Extract archive
+    unarchive: >
+      src={{ temp_dir }}/packer.zip
+      dest={{ local_soft_dir }}/
+      group={{ group }}
+      owner={{ user }}
+  when: packer_state.stat.exists == false or update_apps | default('') != ''
