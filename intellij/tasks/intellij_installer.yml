@@ -18,7 +18,7 @@
   - name: Download package
     get_url: >
       dest={{ temp_dir }}/idea.tar.gz
-      url="https://download.jetbrains.com/idea/ideaIU-2017.1.tar.gz"
+      url="https://download.jetbrains.com/idea/ideaIU-2017.2.3.tar.gz"
 
   - name: Ensure Idea directory is removed
     file: >
