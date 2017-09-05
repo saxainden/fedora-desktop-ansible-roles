@@ -13,9 +13,9 @@
   - name: Download package
     get_url: >
       # due to SSL bug: https://github.com/ansible/ansible/issues/25402
-      validate_certs=no
-      dest={{ temp_dir }}/terraform.zip
-      url="https://releases.hashicorp.com/terraform/0.10.3/terraform_0.10.3_linux_amd64.zip"
+      validate_certs: no
+      dest: "{{ temp_dir }}/terraform.zip"
+      url: "https://releases.hashicorp.com/terraform/0.10.3/terraform_0.10.3_linux_amd64.zip"
 
   - name: Ensure Terraform binary is removed
     file: >
