@@ -15,7 +15,7 @@
   - name: Download package
     get_url: >
       dest={{ temp_dir }}/packer.zip
-      url="https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip"
+      url="https://releases.hashicorp.com/packer/1.0.4/packer_1.0.r_linux_amd64.zip"
 
   - name: Ensure Packer binary is removed
     file: >
