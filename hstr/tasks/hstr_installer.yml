@@ -27,3 +27,8 @@
     dest={{ home_dir }}/.zshrc
     line='export HISTFILE=~/.zsh_history; export HH_CONFIG=hicolor; bindkey -s "\C-r" "\eqhh\n"'
     state=present
+
+- name: Install prerequisities
+  dnf:
+    name: compat-readline6
+    state: latest
