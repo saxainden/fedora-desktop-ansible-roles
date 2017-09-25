@@ -15,7 +15,7 @@
       # due to SSL bug: https://github.com/ansible/ansible/issues/25402
       validate_certs: no
       dest: "{{ temp_dir }}/terraform.zip"
-      url: "https://releases.hashicorp.com/terraform/0.10.4/terraform_0.10.4_linux_amd64.zip"
+      url: "https://releases.hashicorp.com/terraform/0.10.6/terraform_0.10.6_linux_amd64.zip"
 
   - name: Ensure Terraform binary is removed
     file: >
