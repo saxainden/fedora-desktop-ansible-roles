@@ -11,8 +11,8 @@
 
   - name: Create symlink for libudev version
     file:
-      src: /usr/lib64/libudev.so.0
-      dest: /usr/lib64/libudev.so.1
+      src: /usr/lib64/libudev.so.1
+      dest: /usr/lib64/libudev.so.0
       state: link
 
   - name: Download Gitter deb
@@ -24,7 +24,7 @@
     command: dpkg-deb -x {{ temp_dir }}/gitter.deb {{ temp_dir }}/gitter/
 
   - name: Move Gitter directory
-    command: mv {{ temp_dir }}/gitter/ {{ local_soft_dir }}/
+    command: mv {{ temp_dir }}/gitter/opt/Gitter {{ local_soft_dir }}/gitter
 
   - name: Fix permissions
     file:
