@@ -6,6 +6,16 @@
     path={{ temp_dir }}
     state=directory
 
+- name: create software dir
+  file:
+    path={{ local_soft_dir }}
+    state=directory
+
+- name: create binary dir
+  file:
+    path={{ local_bin_dir }}
+    state=directory
+
 - name: Set vm.swappiness
   sysctl: >
     name=vm.swappiness
