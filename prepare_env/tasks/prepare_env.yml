@@ -1,23 +1,17 @@
 ---
 # Preparing environment
 
-- name: create temporary dir
+- name: create required directories
   file:
-    path={{ temp_dir }}
-    state=directory
-
-- name: create software dir
-  file:
-    path={{ local_soft_dir }}
-    state=directory
-
-- name: create binary dir
-  file:
-    path={{ local_bin_dir }}
-    state=directory
+    path: "{{ item }}"
+    state: directory
+  with_items:
+  - "{{ temp_dir }}"
+  - "{{ local_soft_dir }}"
+  - "{{ local_bin_dir }}"
 
 - name: Set vm.swappiness
-  sysctl: >
-    name=vm.swappiness
-    value={{ sys.vm.swappiness }}
-    state=present
+  sysctl:
+    name: vm.swappiness
+    value: "{{ sys.vm.swappiness }}"
+    state: present
