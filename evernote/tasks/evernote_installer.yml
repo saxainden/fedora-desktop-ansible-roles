@@ -1,6 +1,7 @@
 ---
-# This playbook installs nixnote - evernote client for linux
-# For now i'm using 2.x beta as it rocks regarding performance
+# This role will install ninote2 as well as Quentier
+# I started using the latter as nixnote2 stopped working on Fedora28
+# (see: https://github.com/baumgarr/nixnote2/issues/439)
 
 # dnf module cannot manage COPR repos :(
 - name: Enable COPR repo
@@ -10,3 +11,11 @@
   dnf: >
     name=nixnote2
     state=latest
+
+- name: Enable Quentier repo
+  shell: dnf config-manager --add-repo https://download.opensuse.org/repositories/home:d1vanov:quentier-master/Fedora_28/home:d1vanov:quentier-master.repo
+
+- name: Install pkg
+  dnf:
+    name: quentier
+    state: latest
