@@ -17,7 +17,7 @@
 
   - name: Ensure old binary is removed
     file:
-      path: {{ local_bin_dir }}/awless
+      path: "{{ local_bin_dir }}/awless"
       state: absent
 
   - name: Extract archive
