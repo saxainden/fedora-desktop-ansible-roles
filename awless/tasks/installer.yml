@@ -23,7 +23,7 @@
   - name: Extract archive
     unarchive:
       src: "{{ temp_dir }}/awless.tar.gz"
-      dest: "{{ local_soft_dir }}/"
+      dest: "{{ local_bin_dir }}/"
       group: "{{ group }}"
       owner: "{{ user }}"
 
