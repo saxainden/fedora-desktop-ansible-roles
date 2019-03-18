@@ -12,14 +12,6 @@
 - name: Install Adobe Release
   dnf: name={{ temp_dir }}/adobe-release.rpm state=present
 
-- name: Download Flash Player
-  get_url:
-    url=https://fpdownload.macromedia.com/get/flashplayer/pdc/11.2.202.616/flash-plugin-11.2.202.616-release.x86_64.rpm
-    dest={{ temp_dir }}/flashplayer.rpm
-
-- name: Install Flash Player
-  dnf: name={{ temp_dir }}/flashplayer.rpm state=present
-
 - name: Fix for Gnome3 dark style broken styling - step 1
 # http://forums.fedoraforum.org/showpost.php?p=1703251&postcount=3
   file: >
